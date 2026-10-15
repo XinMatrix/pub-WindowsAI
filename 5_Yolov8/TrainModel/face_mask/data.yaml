@@ -1,0 +1,5 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\face_mask\score\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\face_mask\score\images\val
+#test: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\face_mask\score\images\test
+
+names: [ 'else','mask','face' ]

@@ -1,0 +1,9 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\model_frame\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\model_frame\images\val
+
+names: [ 'top_control' ,'search_box','first_menu','selector','item' ]
+# 0 ����������    top_control
+# 1 ������       search_box
+# 2 һ���˵�     first_menu
+# 3 ѡ����       selector
+# 4 ����        item

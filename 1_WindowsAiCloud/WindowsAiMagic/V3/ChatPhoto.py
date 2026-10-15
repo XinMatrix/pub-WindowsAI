@@ -1,0 +1,34 @@
+import http.client
+import json
+
+conn = http.client.HTTPSConnection("api.gpt.ge")
+payload = json.dumps({
+    "model": "gpt-4o-mini",
+    "messages": [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "这是什么?"
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": "data:image/jpeg;base64,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"
+                    }
+                }
+            ]
+        }
+    ],
+    "max_tokens": 300
+})
+headers = {
+    'Authorization': 'YOUR_OPENAI_API_KEY',
+    'User-Agent': 'https://api.gpt.ge/v1/',
+    'Content-Type': 'application/json'
+}
+conn.request("POST", "/v1/chat/completions", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))

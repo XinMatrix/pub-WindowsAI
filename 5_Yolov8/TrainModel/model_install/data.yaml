@@ -1,0 +1,4 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\model_install\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\model_install\images\val
+
+names: [ 'select','unselect' ]

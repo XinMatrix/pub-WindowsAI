@@ -1,0 +1,4 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\WindowsAI_Models\model_outcome_state\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\WindowsAI_Models\model_outcome_state\images\val
+
+names: [ 'user_account_control_0','user_account_control_1','user_account_control_2','user_account_control_3' ]

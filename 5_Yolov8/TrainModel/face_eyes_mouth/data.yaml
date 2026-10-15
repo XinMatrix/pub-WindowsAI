@@ -1,0 +1,6 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\face_eyes_mouth\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\face_eyes_mouth\images\val
+#test: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\face_eyes_mouth\images\test
+
+names: [ 'o_m','c_m','o_e_l','c_e_l','o_e_r','c_e_r' ]
+# 嘴-张开 嘴-闭合 左眼-睁开 左眼-闭合 右眼-睁开 右眼-闭合

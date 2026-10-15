@@ -1,0 +1,4 @@
+train: E:\WindowsAI\TrainModel\closed_eyes\images\train
+val: E:\WindowsAI\TrainModel\closed_eyes\images\val
+
+names: [ 'open_eyes', 'close_mouth' ]

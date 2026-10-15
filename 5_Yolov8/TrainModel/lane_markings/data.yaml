@@ -1,0 +1,4 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\lane_markings\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\lane_markings\images\val
+
+names: [ 'lane' ]

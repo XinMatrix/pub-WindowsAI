@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindowsAi</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+        .scroll-container {
+            height: 100%;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;  /* 使用平滑滚动 */
+            -ms-overflow-style: none;  /* 兼容IE和Edge */
+            scrollbar-width: none;  /* 兼容Firefox */
+        }
+        .scroll-container::-webkit-scrollbar {
+            display: none;  /* 隐藏滚动条 */
+        }
+        .section {
+            height: 100vh; /* 确保每个section的高度是视口高度 */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            scroll-snap-align: start;
+        }
+        .section-1, .section-2 {
+            background-color: #444444;
+            color: #ffffff;
+            display: flex;
+            flex-direction: row; /* 确保内容水平排列 */
+        }
+        .section-1 .text-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            font-size: 8em;
+        }
+        .section-2 .text-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            font-size: 6em;
+        }
+        .section-1 .subtitle {
+            font-size: 0.2em;
+            margin-top: 10px;
+        }
+        .section-2 .text {
+            font-size: 2em;
+            margin-top: 200px;
+        }
+        .section-1 .image-container, .section-2 .image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section-1 .image-container img {
+            max-width: 90%;
+            max-height: 90%;
+            height: auto;
+            width: auto;
+            border: 5px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .section-2 .image-container img {
+            max-width: 60%;
+            max-height: 60%;
+            height: auto;
+            width: auto;
+            border: 5px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .arrow {
+            position: absolute;
+            bottom: 50px;
+            font-size: 3em;
+            color: #ffffff;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="scroll-container" id="scrollContainer">
+    <div class="section section-1">
+        <div class="text-container">
+            WindowsAi
+            <div class="subtitle">重新定义工作方式</div>
+        </div>
+        <div class="image-container">
+            <img src="SampleImg.jpg" alt="程序示意图">
+        </div>
+        <div class="arrow" id="arrow">
+            &#8595; <!-- Unicode字符表示的向下箭头 -->
+        </div>
+    </div>
+    <div class="section section-2">
+        <div class="text-container">
+            <div class="text-line">扫码进群</div>
+            <div class="text-line">免费体验</div>
+        </div>
+        <div class="image-container">
+            <img src="Group.jpg" alt="微信二维码">
+        </div>
+    </div>
+</div>
+
+<script>
+    const container = document.getElementById('scrollContainer');
+    const arrow = document.getElementById('arrow');
+    let isScrolling = false;
+
+    container.addEventListener('wheel', (event) => {
+        if (isScrolling) return;
+
+        event.preventDefault(); // 禁用默认滚动行为
+
+        const delta = Math.sign(event.deltaY); // 获取滚动方向
+        const scrollHeight = window.innerHeight;
+
+        isScrolling = true;
+
+        container.scrollBy({
+            top: delta * scrollHeight,
+            behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+            isScrolling = false;
+        }, 10); // 这里增加了延迟，避免过快触发滚动
+
+        // 根据滚动方向调整箭头的透明度
+        if (delta > 0) {
+            arrow.style.opacity = '0'; // 向下滚动时箭头消失
+        } else {
+            arrow.style.opacity = '1'; // 向上滚动时箭头出现
+        }
+    });
+
+    // 监听滚动事件，判断是否滚动到顶部或底部
+    container.addEventListener('scroll', () => {
+        const maxScrollTop = container.scrollHeight - container.clientHeight;
+        if (container.scrollTop === 0) {
+            arrow.style.opacity = '1'; // 回到顶部时箭头出现
+        } else if (container.scrollTop === maxScrollTop) {
+            arrow.style.opacity = '0'; // 滚动到底部时箭头消失
+        }
+    });
+</script>
+</body>
+</html>

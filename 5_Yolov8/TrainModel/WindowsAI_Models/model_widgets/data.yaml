@@ -1,0 +1,5 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\WindowsAI_Models\model_widgets\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\WindowsAI_Models\model_widgets\images\val
+
+#names: [ 'input','button','selector' ]
+names: [ 'selector','button' ]

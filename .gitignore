@@ -1,0 +1,65 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.installed.cfg
+
+# ---------- 虚拟环境 ----------
+.venv/
+venv/
+env/
+ENV/
+
+# ---------- 模型权重 / 大二进制（GitHub 单文件 100MB 限制，已排除，见 README「获取模型权重」） ----------
+*.pt
+*.onnx
+*.pth
+*.pth.tar
+*.ckpt
+*.pdparams
+*.pdiparams
+*.pdmodel
+*.bin
+*.gguf
+*.weights
+
+# ---------- 媒体 / 可执行文件（同上，已排除） ----------
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.exe
+*.dll
+*.so
+
+# ---------- YOLOv8 训练数据集 / 标注 / 训练产物（体积大，且含人脸等生物特征，不公开） ----------
+5_Yolov8/TrainModel/**/images/
+5_Yolov8/TrainModel/**/labels/
+5_Yolov8/TrainModel/**/datasets/
+5_Yolov8/TrainModel/**/runs/
+5_Yolov8/TrainModel/**/train/
+5_Yolov8/TrainModel/**/val/
+5_Yolov8/TrainModel/**/*.cache
+
+# ---------- 依赖与缓存 ----------
+node_modules/
+.npm
+.DS_Store
+Thumbs.db
+*.log
+
+# ---------- IDE / 编辑器 ----------
+.idea/
+.vscode/
+*.swp
+
+# 第三方 PaddleOCR 框架源码过大，未纳入（按官方文档另行安装）
+1_WindowsAiCloud/MyOCR/src/PaddleOCR_Main/
+
+# 第三方 PaddleOCR 框架源码过大，未纳入（按官方文档另行安装）
+1_WindowsAiCloud/MyOCR/src/PaddleOCR_Main/

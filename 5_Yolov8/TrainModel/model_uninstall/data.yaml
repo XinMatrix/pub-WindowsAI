@@ -1,0 +1,5 @@
+train: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\model_uninstall\images\train
+val: C:\Users\USER\PycharmProjects\WindowsAI\TrainModel\model_uninstall\images\val
+
+names: [ 'windows_settings_uninstall_3_points' ]
+# ϵͳ����ж��������(���Ƹ���)
